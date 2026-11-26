@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag name (e.g. v1.0.0)"
+        required: true
+        default: "v1.0.0"
 
 permissions:
   contents: write
@@ -26,11 +32,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Run unit tests and assemble release/debug APKs
-        run: ./gradlew testDebugUnitTest assembleDebug assembleRelease --no-daemon
+        run: |
+          chmod +x ./gradlew
+          ./gradlew testDebugUnitTest assembleDebug assembleRelease --no-daemon
 
       - name: Rename APK artifacts
         run: |
-          TAG="${GITHUB_REF_NAME}"
+          TAG="${{ inputs.tag || github.ref_name }}"
           cp app/build/outputs/apk/debug/app-debug.apk "Placebo-Location-Accuracy-${TAG}-debug.apk"
           if [ -f app/build/outputs/apk/release/app-release-unsigned.apk ]; then
             cp app/build/outputs/apk/release/app-release-unsigned.apk "Placebo-Location-Accuracy-${TAG}-release-unsigned.apk"
@@ -39,6 +47,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
           generate_release_notes: true
           files: |
             Placebo-Location-Accuracy-*-debug.apk
