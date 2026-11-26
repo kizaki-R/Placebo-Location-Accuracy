@@ -1,7 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/readme-banner-dark-zh-TW-1280x400.png">
-  <img alt="Placebo Location Accuracy" src="images/readme-banner-light-zh-TW-1280x400.png">
-</picture>
+![Placebo Location Accuracy](images/readme-banner-dark-zh-TW-1280x400.png)
 
 # Placebo Location Accuracy
 
