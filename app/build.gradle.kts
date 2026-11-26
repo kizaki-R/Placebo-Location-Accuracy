@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "io.github.placebolocationaccuracy"
+    namespace = "com.kizakiworks.placebolocationaccuracy"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "io.github.placebolocationaccuracy"
+        applicationId = "com.kizakiworks.placebolocationaccuracy"
         minSdk = 28
         targetSdk = 35
         versionCode = 1

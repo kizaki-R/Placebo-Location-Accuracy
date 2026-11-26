@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Placebo Location Accuracy</string>
+    <string name="app_subtitle">回歸純粹的 GPS</string>
     <string name="xposed_description">讓 Google 定位精確度開關維持原樣但失去實質效果，封鎖網路定位、GMS Wi-Fi/BLE/基地台掃描與定位關閉繞過，僅保留純 GPS 衛星定位。</string>
-    <string name="status_active">LSPosed 模組已啟用</string>
-    <string name="status_inactive">LSPosed 模組尚未啟用</string>
-    <string name="status_active_detail">Hook 已載入生效。變更開關透過 RemotePreferences 即時同步。</string>
-    <string name="status_active_detail_with_framework">已連線至 %1$s。變更開關透過 RemotePreferences 即時同步。</string>
-    <string name="status_inactive_detail">請在支援 Modern Xposed API 101+ 的 LSPosed Manager 啟用本模組，勾選「系統框架 (system)」與「Google Play 服務 (com.google.android.gms)」，然後重新開機。</string>
-    <string name="section_controls">攔截控制</string>
-    <string name="pref_block_network_location_title">架空網路定位（僅保留純 GPS）</string>
-    <string name="pref_block_network_location_summary">在 system_server 與 GMS 攔截 network provider 位置回報與請求，保留純 GPS 衛星定位正常運作。</string>
-    <string name="pref_block_gms_wifi_title">封鎖 GMS Wi-Fi 與 RTT 掃描</string>
-    <string name="pref_block_gms_wifi_summary">對 Google Play 服務回傳空 Wi-Fi 掃描清單並丟棄 Wi-Fi RTT 測距，不影響正常 Wi-Fi 連線。</string>
-    <string name="pref_block_gms_cell_title">封鎖 GMS 基地台資訊</string>
-    <string name="pref_block_gms_cell_summary">對 Google Play 服務回傳空基地台清單，不影響通話、簡訊與行動數據。</string>
-    <string name="pref_block_gms_ble_title">封鎖 GMS 藍牙 BLE 背景掃描</string>
-    <string name="pref_block_gms_ble_summary">丟棄 Google Play 服務發起的 BLE 掃描，不影響藍牙耳機與一般裝置配對。</string>
-    <string name="pref_block_location_bypass_title">封鎖總定位關閉時的特權繞過</string>
-    <string name="pref_block_location_bypass_summary">清除 GMS 請求中的 locationSettingsIgnored 旗標，確保關閉總定位時徹底停止供位。</string>
-    <string name="pref_verbose_logging_title">詳細除錯日誌</string>
-    <string name="pref_verbose_logging_summary">以標籤 PlaceboLA 記錄攔截事件，可用 adb logcat 驗證運作狀態。</string>
+
+    <!-- Language Switcher -->
+    <string name="language_button_desc">切換顯示語言</string>
+    <string name="language_dialog_title">顯示語言</string>
+    <string name="language_option_system">跟隨系統</string>
+    <string name="language_option_zh_tw">繁體中文</string>
+    <string name="language_option_zh_cn">简体中文</string>
+    <string name="language_option_en">English</string>
+    <string name="language_badge_system">Auto</string>
+    <string name="language_badge_zh_tw">繁</string>
+    <string name="language_badge_zh_cn">简</string>
+    <string name="language_badge_en">EN</string>
+
+    <!-- Hero Status -->
+    <string name="status_active">模組已啟用</string>
+    <string name="status_inactive">模組尚未啟用</string>
+    <string name="status_pill_inactive">API 101+ 未連線</string>
+    <string name="status_active_detail">Hook 已載入運作中，下方開關變更會透過 RemotePreferences 即時同步。</string>
+    <string name="status_inactive_detail">請在支援 Modern Xposed API 101+ 的 LSPosed Manager 啟用本模組，勾選系統框架與 Google Play 服務後重新開機。</string>
+
+    <!-- Sections -->
+    <string name="section_protection">定位防護</string>
+    <string name="section_diagnostics">診斷</string>
     <string name="section_scope_hint">建議 LSPosed 作用範圍</string>
-    <string name="scope_hint_body">必選：\n• 系統框架 (android)\n• Google Play 服務 (com.google.android.gms)\n\n建議強化：\n• Google 服務架構 (com.google.android.gsf)\n• 電話服務 (com.android.phone)\n• 藍牙 (com.android.bluetooth)</string>
+
+    <!-- Protection Switches -->
+    <string name="pref_block_network_location_title">架空網路定位（僅純 GPS）</string>
+    <string name="pref_block_network_location_summary">在 system_server 與 GMS 丟棄網路定位回報與請求，保留 GPS 衛星定位不受影響。</string>
+
+    <string name="pref_block_gms_wifi_title">封鎖 GMS Wi-Fi 與 RTT 掃描</string>
+    <string name="pref_block_gms_wifi_summary">對 GMS 回傳空 Wi-Fi 清單並攔截 RTT 測距，不影響正常 Wi-Fi 上網。</string>
+
+    <string name="pref_block_gms_cell_title">封鎖 GMS 基地台資訊</string>
+    <string name="pref_block_gms_cell_summary">對 GMS 隱藏鄰近基地台清單，不影響通話、簡訊與行動網路。</string>
+
+    <string name="pref_block_gms_ble_title">封鎖 GMS 藍牙 BLE 背景掃描</string>
+    <string name="pref_block_gms_ble_summary">攔截 GMS 發起的低功耗藍牙掃描，不影響耳機與已配對裝置。</string>
+
+    <string name="pref_block_location_bypass_title">封鎖關閉定位下特殊存取</string>
+    <string name="pref_block_location_bypass_summary">清除 GMS 忽略定位開關的標記，關閉總定位就徹底停止供位。</string>
+
+    <!-- Diagnostics -->
+    <string name="pref_verbose_logging_title">詳細除錯日誌</string>
+    <string name="pref_verbose_logging_summary">以標籤 PlaceboLA 輸出攔截紀錄，方便透過 adb logcat 檢視。</string>
+
+    <!-- Scope Card -->
+    <string name="scope_group_required">必選</string>
+    <string name="scope_group_recommended">建議強化</string>
+    <string name="scope_chip_system">系統框架 · android</string>
+    <string name="scope_chip_gms">Google Play 服務 · com.google.android.gms</string>
+    <string name="scope_chip_gsf">Google 服務架構 · com.google.android.gsf</string>
+    <string name="scope_chip_phone">電話服務 · com.android.phone</string>
+    <string name="scope_chip_bluetooth">藍牙 · com.android.bluetooth</string>
+
+    <!-- Footer & Errors -->
+    <string name="footer_github_label">GitHub</string>
+    <string name="footer_github_desc">開啟 GitHub 專案頁面</string>
+    <string name="footer_author_label">作者 · kizaki-R</string>
+    <string name="footer_author_desc">開啟作者 GitHub 個人頁面</string>
+    <string name="footer_version_format">v%1$s</string>
     <string name="prefs_error_world_readable">無法存取 LSPosed 共用偏好設定；請先在 LSPosed 啟用本模組並重新開啟 App。</string>
 </resources>

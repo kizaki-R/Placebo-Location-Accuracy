@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Placebo Location Accuracy</string>
+    <string name="app_subtitle">Pure GPS underneath</string>
     <string name="xposed_description">Keeps Google Location Accuracy UI intact while neutralizing network location, GMS Wi-Fi/BLE/Cell scans, and location-off bypasses. Pure GPS only.</string>
-    <string name="status_active">LSPosed Module Active</string>
-    <string name="status_inactive">LSPosed Module Not Active</string>
-    <string name="status_active_detail">Hooks are loaded. Changes sync immediately via RemotePreferences.</string>
-    <string name="status_active_detail_with_framework">Connected to %1$s. Changes sync immediately via RemotePreferences.</string>
-    <string name="status_inactive_detail">Enable this module in LSPosed Manager (Modern Xposed API 101+ required), check System Framework (system) and Google Play services (com.google.android.gms), then reboot.</string>
-    <string name="section_controls">Interception Controls</string>
-    <string name="pref_block_network_location_title">Neutralize Network Location (Pure GPS Only)</string>
-    <string name="pref_block_network_location_summary">Drop network provider fixes and requests across system_server and GMS while keeping pure GPS satellite fixes untouched.</string>
-    <string name="pref_block_gms_wifi_title">Block GMS Wi-Fi &amp; RTT Scans</string>
-    <string name="pref_block_gms_wifi_summary">Return empty Wi-Fi scan results and drop Wi-Fi RTT ranging for Google Play services without affecting normal Wi-Fi connectivity.</string>
-    <string name="pref_block_gms_cell_title">Block GMS Cell Tower Info</string>
-    <string name="pref_block_gms_cell_summary">Return empty cell tower lists to Google Play services without affecting calls, SMS, or mobile data.</string>
-    <string name="pref_block_gms_ble_title">Block GMS BLE Background Scans</string>
-    <string name="pref_block_gms_ble_summary">Drop Bluetooth Low Energy scans initiated by Google Play services without affecting paired devices.</string>
-    <string name="pref_block_location_bypass_title">Block Location-Off Privilege Bypass</string>
-    <string name="pref_block_location_bypass_summary">Strip locationSettingsIgnored flags from GMS requests so turning off Location truly stops location delivery.</string>
-    <string name="pref_verbose_logging_title">Verbose Debug Logging</string>
-    <string name="pref_verbose_logging_summary">Log intercepted calls under tag PlaceboLA for verification via adb logcat.</string>
+
+    <!-- Language Switcher -->
+    <string name="language_button_desc">Switch language</string>
+    <string name="language_dialog_title">Display Language</string>
+    <string name="language_option_system">Follow System</string>
+    <string name="language_option_zh_tw">繁體中文</string>
+    <string name="language_option_zh_cn">简体中文</string>
+    <string name="language_option_en">English</string>
+    <string name="language_badge_system">Auto</string>
+    <string name="language_badge_zh_tw">繁</string>
+    <string name="language_badge_zh_cn">简</string>
+    <string name="language_badge_en">EN</string>
+
+    <!-- Hero Status -->
+    <string name="status_active">Module Active</string>
+    <string name="status_inactive">Module Not Active</string>
+    <string name="status_pill_inactive">API 101+ Disconnected</string>
+    <string name="status_active_detail">Hooks are live. Switch changes sync immediately via RemotePreferences.</string>
+    <string name="status_inactive_detail">Enable this module in LSPosed Manager (Modern Xposed API 101+), select System Framework and Google Play services, then reboot.</string>
+
+    <!-- Sections -->
+    <string name="section_protection">Protection</string>
+    <string name="section_diagnostics">Diagnostics</string>
     <string name="section_scope_hint">Recommended LSPosed Scope</string>
-    <string name="scope_hint_body">Required:\n• System Framework (android)\n• Google Play services (com.google.android.gms)\n\nRecommended hardening:\n• Google Services Framework (com.google.android.gsf)\n• Phone Services (com.android.phone)\n• Bluetooth (com.android.bluetooth)</string>
+
+    <!-- Protection Switches -->
+    <string name="pref_block_network_location_title">Pure GPS Only</string>
+    <string name="pref_block_network_location_summary">Drop network provider fixes across system_server and GMS while keeping GPS satellites intact.</string>
+
+    <string name="pref_block_gms_wifi_title">Block GMS Wi-Fi &amp; RTT Scans</string>
+    <string name="pref_block_gms_wifi_summary">Return empty Wi-Fi scan lists and drop RTT ranging for GMS without affecting Wi-Fi connectivity.</string>
+
+    <string name="pref_block_gms_cell_title">Block GMS Cell Tower Info</string>
+    <string name="pref_block_gms_cell_summary">Hide nearby cell towers from GMS without affecting calls, SMS, or mobile data.</string>
+
+    <string name="pref_block_gms_ble_title">Block GMS BLE Scans</string>
+    <string name="pref_block_gms_ble_summary">Drop background Bluetooth Low Energy scans from GMS while keeping paired devices working.</string>
+
+    <string name="pref_block_location_bypass_title">Block Location-Off Bypass</string>
+    <string name="pref_block_location_bypass_summary">Strip privileged ignore-settings flags from GMS so turning off Location truly stops fixes.</string>
+
+    <!-- Diagnostics -->
+    <string name="pref_verbose_logging_title">Verbose Debug Logging</string>
+    <string name="pref_verbose_logging_summary">Write intercepted events under tag PlaceboLA for adb logcat verification.</string>
+
+    <!-- Scope Card -->
+    <string name="scope_group_required">Required</string>
+    <string name="scope_group_recommended">Recommended Hardening</string>
+    <string name="scope_chip_system">System Framework · android</string>
+    <string name="scope_chip_gms">Google Play services · com.google.android.gms</string>
+    <string name="scope_chip_gsf">Google Services Framework · com.google.android.gsf</string>
+    <string name="scope_chip_phone">Phone Services · com.android.phone</string>
+    <string name="scope_chip_bluetooth">Bluetooth · com.android.bluetooth</string>
+
+    <!-- Footer & Errors -->
+    <string name="footer_github_label">GitHub</string>
+    <string name="footer_github_desc">Open GitHub repository</string>
+    <string name="footer_author_label">By kizaki-R</string>
+    <string name="footer_author_desc">Open author profile on GitHub</string>
+    <string name="footer_version_format">v%1$s</string>
     <string name="prefs_error_world_readable">LSPosed shared prefs unavailable; enable the module in LSPosed and reopen the app.</string>
 </resources>

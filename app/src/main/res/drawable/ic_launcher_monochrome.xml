@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 512 單位的設計座標對應中央 72dp -->
+    <group
+        android:translateX="18"
+        android:translateY="18"
+        android:scaleX="0.140625"
+        android:scaleY="0.140625">
+        <path
+            android:pathData="M218.75,196.12 L285.21,129.65 A80,80 0 0 1 398.35,242.79 L331.88,309.25 Z M302.05,198.95 a27,27 0 1 0 54,0 a27,27 0 1 0 -54,0 Z"
+            android:fillType="evenOdd"
+            android:fillColor="#FF000000" />
+        <path
+            android:pathData="M203.90,235.01 L292.99,324.10 L230.77,386.33 A63,63 0 0 1 141.67,297.23 Z"
+            android:strokeWidth="34"
+            android:strokeLineJoin="round"
+            android:strokeColor="#FF000000" />
+        <path
+            android:pathData="M317.05,198.95 a12,12 0 1 0 24,0 a12,12 0 1 0 -24,0 Z"
+            android:fillColor="#FF000000" />
+        <path
+            android:pathData="M114.00,138.00 a24,24 0 1 0 48,0 a24,24 0 1 0 -48,0 Z"
+            android:fillColor="#FF000000" />
+        <path
+            android:pathData="M191.79,142.71 A54,54 0 0 1 142.71,191.79"
+            android:strokeWidth="18"
+            android:strokeLineCap="round"
+            android:strokeColor="#FF000000" />
+    </group>
+</vector>

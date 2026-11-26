@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/readme-banner-dark-en-1280x400.png">
+  <img alt="Placebo Location Accuracy" src="images/readme-banner-light-en-1280x400.png">
+</picture>
+
 # Placebo Location Accuracy
 
 English | [繁體中文](README.zh-TW.md)
@@ -10,8 +15,6 @@ Placebo Location Accuracy takes the opposite route. Leave the system **Google Lo
 
 - Android 9–16+ (API 28–36+, primarily targeting Android 13, 14, 15, and 16)
 - Rooted device with a Modern Xposed framework supporting **libxposed API 101+** (tested on LSPosed 2.2.0 / API 102)
-
-> Legacy Xposed API 82/93 frameworks are not supported.
 
 ## What It Intercepts
 
@@ -63,4 +66,5 @@ The APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## License
 
-Licensed under the [GNU General Public License v3.0](LICENSE).
+Licensed under the [Apache License 2.0](LICENSE).
+Derivative works and forks must retain the attribution statement in [NOTICE](NOTICE) in accordance with Section 4(d) of the license.

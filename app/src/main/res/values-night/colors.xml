@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Surfaces -->
+    <color name="surface_canvas">#0E1413</color>
+    <color name="surface_card">#16201E</color>
+    <color name="surface_card_stroke">#243330</color>
+    <color name="surface_chip">#1E2B28</color>
+    <color name="surface_chip_stroke">#2E403C</color>
+    <color name="divider_subtle">#212F2C</color>
+
+    <!-- Brand & Accents -->
+    <color name="brand_primary">#5EEAD4</color>
+    <color name="brand_on_primary">#042F2E</color>
+    <color name="brand_primary_container">#134E4A</color>
+    <color name="brand_on_primary_container">#CCFBF1</color>
+    <color name="brand_secondary">#9FB8B2</color>
+    <color name="brand_secondary_container">#213632</color>
+    <color name="brand_on_secondary_container">#CFE4DF</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#ECF3F1</color>
+    <color name="text_secondary">#9CB0AB</color>
+    <color name="text_tertiary">#728681</color>
+
+    <!-- Hero Status: Active (Deep Emerald) -->
+    <color name="status_active_bg_start">#102B22</color>
+    <color name="status_active_bg_end">#15382C</color>
+    <color name="status_active_stroke">#215946</color>
+    <color name="status_active_icon_bg">#1CA776</color>
+    <color name="status_active_icon_tint">#042218</color>
+    <color name="status_active_pill_bg">#184737</color>
+    <color name="status_active_pill_text">#7FEBC2</color>
+    <color name="status_active_title">#CEF6E6</color>
+    <color name="status_active_detail">#95CEB7</color>
+
+    <!-- Hero Status: Inactive (Deep Coral Amber) -->
+    <color name="status_inactive_bg_start">#2A1614</color>
+    <color name="status_inactive_bg_end">#351C19</color>
+    <color name="status_inactive_stroke">#612D27</color>
+    <color name="status_inactive_icon_bg">#E45F4C</color>
+    <color name="status_inactive_icon_tint">#2B0C08</color>
+    <color name="status_inactive_pill_bg">#4C231E</color>
+    <color name="status_inactive_pill_text">#FFB4A8</color>
+    <color name="status_inactive_title">#FFDCD6</color>
+    <color name="status_inactive_detail">#E3ABA2</color>
+
+    <!-- Feature Icon Tonal Badges -->
+    <color name="badge_gps_bg">#0C2B40</color>
+    <color name="badge_gps_fg">#7DD3FC</color>
+
+    <color name="badge_wifi_bg">#0E302D</color>
+    <color name="badge_wifi_fg">#5EEAD4</color>
+
+    <color name="badge_cell_bg">#261C45</color>
+    <color name="badge_cell_fg">#C4B5FD</color>
+
+    <color name="badge_ble_bg">#13274D</color>
+    <color name="badge_ble_fg">#93C5FD</color>
+
+    <color name="badge_lock_bg">#3A270E</color>
+    <color name="badge_lock_fg">#FCD34D</color>
+
+    <color name="badge_log_bg">#222C34</color>
+    <color name="badge_log_fg">#CBD5E1</color>
+
+    <!-- Scope Chips -->
+    <color name="scope_required_bg">#13382B</color>
+    <color name="scope_required_stroke">#205A45</color>
+    <color name="scope_required_text">#82E8C1</color>
+
+    <color name="scope_optional_bg">#202D33</color>
+    <color name="scope_optional_stroke">#30434C</color>
+    <color name="scope_optional_text">#AFC4CF</color>
+</resources>

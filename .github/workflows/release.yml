@@ -1,0 +1,45 @@
+name: Release APK
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run unit tests and assemble release/debug APKs
+        run: ./gradlew testDebugUnitTest assembleDebug assembleRelease --no-daemon
+
+      - name: Rename APK artifacts
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          cp app/build/outputs/apk/debug/app-debug.apk "Placebo-Location-Accuracy-${TAG}-debug.apk"
+          if [ -f app/build/outputs/apk/release/app-release-unsigned.apk ]; then
+            cp app/build/outputs/apk/release/app-release-unsigned.apk "Placebo-Location-Accuracy-${TAG}-release-unsigned.apk"
+          fi
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            Placebo-Location-Accuracy-*-debug.apk
+            Placebo-Location-Accuracy-*-release-unsigned.apk

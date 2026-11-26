@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/readme-banner-dark-zh-TW-1280x400.png">
+  <img alt="Placebo Location Accuracy" src="images/readme-banner-light-zh-TW-1280x400.png">
+</picture>
+
 # Placebo Location Accuracy
 
 [English](README.md) | 繁體中文
@@ -11,8 +16,6 @@ Placebo Location Accuracy 採反方向處理：讓系統裡的「Google 定位�
 - Android 9–16+（API 28–36+，主要支援 Android 13、14、15 與 16）
 - 已 Root，且安裝支援 **libxposed API 101+** 的 Modern Xposed 框架（實測環境：LSPosed 2.2.0 / API 102）
 
-> 不支援舊版 Xposed API 82／93。
-
 ## 攔截項目與開關說明
 
 App 內每個開關都獨立運作，透過 `RemotePreferences` 即時同步，切換開關不必重開機：
@@ -23,7 +26,7 @@ App 內每個開關都獨立運作，透過 `RemotePreferences` 即時同步，�
 | **封鎖 GMS Wi-Fi 與 RTT 掃描** | 開啟 | 在 `WifiServiceImpl`（含 Android 11–16 APEX `service-wifi.jar`）與 GMS 內的 `WifiManager`、`WifiScanner`、`WifiRttManager` 回傳空掃描清單並丟棄測距。正常 Wi-Fi 連線不受影響。 |
 | **封鎖 GMS 基地台資訊** | 開啟 | 在 `PhoneInterfaceManager` 與 GMS 內的 `TelephonyManager`（`getAllCellInfo`、`getCellLocation`、`requestCellInfoUpdate`）回傳空清單。通話、簡訊與行動數據不受影響。 |
 | **封鎖 GMS 藍牙 BLE 背景掃描** | 開啟 | 在 `com.android.bluetooth`（`GattService`、`ScanController`、`TransitionalScanHelper`）與 GMS 內的 `BluetoothLeScanner` 丟棄 GMS 發起的 BLE 掃描。已配對的藍牙裝置不受影響。 |
-| **封鎖總定位關閉時的特權繞過** | 開啟 | 清除 `system_server` 中 GMS `LocationRequest` 與 `LastLocationRequest` 的 `mLocationSettingsIgnored` 旗標。 |
+| **封鎖關閉定位下特殊存取** | 開啟 | 清除 `system_server` 中 GMS `LocationRequest` 與 `LastLocationRequest` 的 `mLocationSettingsIgnored` 旗標。 |
 | **詳細除錯日誌** | 關閉 | 以標籤 `PlaceboLA` 輸出攔截紀錄，方便透過 `adb logcat` 驗證。 |
 
 若只想擋單一來源（例如只屏蔽電信基地台定位、保留 Wi-Fi 定位），把「架空網路定位（僅保留純 GPS）」關掉，只開「封鎖 GMS 基地台資訊」即可。
@@ -63,4 +66,5 @@ App 內每個開關都獨立運作，透過 `RemotePreferences` 即時同步，�
 
 ## 授權條款
 
-本專案採用 [GNU General Public License v3.0](LICENSE) 授權。
+本專案採用 [Apache License 2.0](LICENSE) 授權。
+依據授權條款第 4(d) 條，任何衍生專案與 Fork 必須保留 [NOTICE](NOTICE) 中的原始設計與架構歸屬聲明。
