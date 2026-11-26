@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Placebo Location Accuracy</string>
+    <string name="xposed_description">讓 Google 定位精確度開關維持原樣但失去實質效果，封鎖網路定位、GMS Wi-Fi/BLE/基地台掃描與定位關閉繞過，僅保留純 GPS 衛星定位。</string>
+    <string name="status_active">LSPosed 模組已啟用</string>
+    <string name="status_inactive">LSPosed 模組尚未啟用</string>
+    <string name="status_active_detail">Hook 已載入生效。變更開關透過 RemotePreferences 即時同步。</string>
+    <string name="status_active_detail_with_framework">已連線至 %1$s。變更開關透過 RemotePreferences 即時同步。</string>
+    <string name="status_inactive_detail">請在支援 Modern Xposed API 101+ 的 LSPosed Manager 啟用本模組，勾選「系統框架 (system)」與「Google Play 服務 (com.google.android.gms)」，然後重新開機。</string>
+    <string name="section_controls">攔截控制</string>
+    <string name="pref_block_network_location_title">架空網路定位（僅保留純 GPS）</string>
+    <string name="pref_block_network_location_summary">在 system_server 與 GMS 攔截 network provider 位置回報與請求，保留純 GPS 衛星定位正常運作。</string>
+    <string name="pref_block_gms_wifi_title">封鎖 GMS Wi-Fi 與 RTT 掃描</string>
+    <string name="pref_block_gms_wifi_summary">對 Google Play 服務回傳空 Wi-Fi 掃描清單並丟棄 Wi-Fi RTT 測距，不影響正常 Wi-Fi 連線。</string>
+    <string name="pref_block_gms_cell_title">封鎖 GMS 基地台資訊</string>
+    <string name="pref_block_gms_cell_summary">對 Google Play 服務回傳空基地台清單，不影響通話、簡訊與行動數據。</string>
+    <string name="pref_block_gms_ble_title">封鎖 GMS 藍牙 BLE 背景掃描</string>
+    <string name="pref_block_gms_ble_summary">丟棄 Google Play 服務發起的 BLE 掃描，不影響藍牙耳機與一般裝置配對。</string>
+    <string name="pref_block_location_bypass_title">封鎖總定位關閉時的特權繞過</string>
+    <string name="pref_block_location_bypass_summary">清除 GMS 請求中的 locationSettingsIgnored 旗標，確保關閉總定位時徹底停止供位。</string>
+    <string name="pref_verbose_logging_title">詳細除錯日誌</string>
+    <string name="pref_verbose_logging_summary">以標籤 PlaceboLA 記錄攔截事件，可用 adb logcat 驗證運作狀態。</string>
+    <string name="section_scope_hint">建議 LSPosed 作用範圍</string>
+    <string name="scope_hint_body">必選：\n• 系統框架 (android)\n• Google Play 服務 (com.google.android.gms)\n\n建議強化：\n• Google 服務架構 (com.google.android.gsf)\n• 電話服務 (com.android.phone)\n• 藍牙 (com.android.bluetooth)</string>
+    <string name="prefs_error_world_readable">無法存取 LSPosed 共用偏好設定；請先在 LSPosed 啟用本模組並重新開啟 App。</string>
+</resources>

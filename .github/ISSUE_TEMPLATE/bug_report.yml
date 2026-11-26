@@ -1,0 +1,45 @@
+name: Bug Report
+description: Report a hook miss, ROM compatibility issue, or crash
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: android_version
+    attributes:
+      label: Android Version & ROM
+      placeholder: "e.g., Android 16 (API 36), ColorOS 16 / Pixel Stock / HyperOS 2"
+    validations:
+      required: true
+
+  - type: input
+    id: xposed_framework
+    attributes:
+      label: Xposed Framework & API Version
+      placeholder: "e.g., LSPosed 2.2.0 (libxposed API 102)"
+    validations:
+      required: true
+
+  - type: input
+    id: module_version
+    attributes:
+      label: Module Version
+      placeholder: "e.g., 1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the expected behavior and what happened instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: PlaceboLA Logcat Output
+      description: Enable "Verbose Debug Logging" in the app and paste relevant output from `adb logcat -d -s PlaceboLA` (redact any personal coordinates or identifiers).
+      render: text
+    validations:
+      required: false
